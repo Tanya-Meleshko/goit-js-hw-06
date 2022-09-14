@@ -25,9 +25,14 @@ const images = [
 
 const galleryEl = document.querySelector('.gallery');
 
-const markupGallery = images.map(({ url, alt }) => 
-  `<li> <img src = "${url}" alt = "${alt}" width = "400"></img> </li>`).join('');
+const markupGallery = images
+  .map(({ url, alt }) => `<li> <img src = "${url}" alt = "${alt}" width = "400"></img> </li>`)
+  .join('');
 
 galleryEl.insertAdjacentHTML('afterbegin', markupGallery);
+
+galleryEl.style.display = 'flex';
+galleryEl.style.flexDirection = 'row';
+galleryEl.style.justifyContent = 'space-between';
 
 console.log(galleryEl);
