@@ -16,13 +16,13 @@ const ingredients = [
 
 const ingredientsEl = document.getElementById('ingredients');
 
-ingredients.forEach(element => {
+ const elementList = ingredients.map(element => {
   const liEl = document.createElement('li');
   liEl.textContent = element;
-  liEl.classList.add('item')
-  ingredientsEl.append(liEl);
-})
+  liEl.classList.add('item');
+  return liEl;
+ })
+
+ingredientsEl.append(...elementList);
 
 console.log(ingredientsEl);
-
-
